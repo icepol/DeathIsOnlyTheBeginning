@@ -1,12 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace pixelook
 {
     [RequireComponent(typeof(AudioSource))]
     public class MusicManager : MonoBehaviour
     {
-        [SerializeField] private float levelStartOffset;
         [SerializeField] private float fadeOutDuration = 0.5f;
 
         private float _volume;
@@ -23,7 +21,6 @@ namespace pixelook
 
         private void OnEnable()
         {
-            EventManager.AddListener(Events.GAME_STARTED, OnGameStarted);
             EventManager.AddListener(Events.PLAYER_DIED, OnPlayerDied);
             EventManager.AddListener(Events.MUSIC_SETTINGS_CHANGED, OnMusicSettingsChanged);
         }
@@ -51,7 +48,6 @@ namespace pixelook
 
         private void OnDisable()
         {
-            EventManager.RemoveListener(Events.GAME_STARTED, OnGameStarted);
             EventManager.RemoveListener(Events.PLAYER_DIED, OnPlayerDied);
             EventManager.RemoveListener(Events.MUSIC_SETTINGS_CHANGED, OnMusicSettingsChanged);
         }
@@ -59,11 +55,6 @@ namespace pixelook
         private void OnPlayerDied()
         {
             _isFadingOut = true;
-        }
-
-        private void OnGameStarted()
-        {
-            audioSource.time = levelStartOffset;
         }
 
         private void OnMusicSettingsChanged()

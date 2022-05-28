@@ -5,10 +5,18 @@ public class Portal : MonoBehaviour
 {
     [SerializeField] private ParticleSystem portalOpen;
 
+    [SerializeField] private AudioClip portalOpenSound;
+    [SerializeField] private AudioClip soulSavedSound;
+
+    private AudioSource _audioSource; 
+    
+
     private void Awake()
     {
         EventManager.AddListener(Events.SOUL_TAKEN, OnSoulTaken);
         EventManager.AddListener(Events.SOUL_SAVED, OnSoulSaved);
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -43,10 +51,18 @@ public class Portal : MonoBehaviour
     private void OnSoulSaved()
     {
         portalOpen.Stop();
+        
+        _audioSource.clip = soulSavedSound;
+        _audioSource.loop = false;
+        _audioSource.Play();
     }
 
     private void OnSoulTaken()
     {
         portalOpen.Play();
+
+        _audioSource.clip = portalOpenSound;
+        _audioSource.loop = true;
+        _audioSource.Play();
     }
 }
