@@ -14,12 +14,14 @@ public class Soul : MonoBehaviour
     [SerializeField] private AudioClip[] soulVoices;
     
     private AudioSource _audioSource;
+    private Animator _animator;
     
     private bool _isActive = true;
 
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -32,13 +34,19 @@ public class Soul : MonoBehaviour
         if (!_isActive) return;
             
         var player = other.GetComponent<Player>();
-        
         if (!player) return;
 
+        TakeSoul(player);
+    }
+
+    void TakeSoul(Player player)
+    {
         _isActive = false;
         
         player.HasSoulTaken = true;
         soulParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        
+        _animator.SetTrigger("Hide");
         
         Destroy(gameObject, pickDestroyDelay);
     }
