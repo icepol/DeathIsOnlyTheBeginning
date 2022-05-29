@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7620969258836498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3786842273512311598}
+  - component: {fileID: 1027282933638026407}
+  - component: {fileID: 5959776412731816895}
+  m_Layer: 0
+  m_Name: GraveWrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3786842273512311598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620969258836498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 887916525544517847}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027282933638026407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620969258836498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8deb26e817d4e6891a13188d1e0d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 4.5, y: 0, z: 4.5}
+  scale: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5959776412731816895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620969258836498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d39560c1d5e3495296ec4a194c92eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 8975882510631973141, guid: fd2e7465c2d5e4ab3b7db00c7a348020, type: 3}
+  - {fileID: 8975882510631973141, guid: f71444bdef954437b9b006221759d257, type: 3}
+  - {fileID: 8975882510631973141, guid: 25fba9fc1731e4d32859b0f3b32df05e, type: 3}
 --- !u!1 &887916525544517840
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +99,7 @@ Transform:
   - {fileID: 5417640553179626899}
   - {fileID: 7783446648951435653}
   - {fileID: 8649452356686471657}
+  - {fileID: 3786842273512311598}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

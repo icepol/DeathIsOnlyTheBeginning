@@ -10,6 +10,8 @@ public class MazeRoomView : MonoBehaviour
     [SerializeField] private MazeWall wallLeft;
     [SerializeField] private MazeWall wallRight;
 
+    [SerializeField] private GameObject grave;
+
     private bool _isFirstVisualization;
 
     public MazeRoom Room { get; private set; }
@@ -42,5 +44,8 @@ public class MazeRoomView : MonoBehaviour
                     throw new Exception("Unknown wall position value.");
             }
         }
+        
+        if (mazeRoom.isRoot)
+            Destroy(grave);
     }
 }
